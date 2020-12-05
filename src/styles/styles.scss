@@ -5,11 +5,33 @@ html {
   box-sizing: inherit;
 }
 
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
 body {
   margin: 0;
   padding: 1rem;
   background-color: ghostwhite;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-container {
+  display: grid;
+  grid-gap: .5rem;
+  @media screen and (min-width: $sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: $md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: $lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (min-width: $xl) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .card {
